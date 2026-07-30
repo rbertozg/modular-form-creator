@@ -1,0 +1,5 @@
+backend/
+coverage/
+dist/
+node_modules/
+src/design-system/
