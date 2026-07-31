@@ -2,16 +2,16 @@
 
 ## Project Structure & Module Organization
 
-The React frontend lives in `src/`. Providers and routing are in `src/app/`,
-generic HTTP infrastructure is in `src/api/`, and shared application components
-are in `src/components/`. Resource API contracts, queries, pages, forms, hooks,
-state, and tests are grouped under `src/features/resources/`. Test fixtures and
-MSW setup are in `src/test/`. `src/design-system/` is provided code and must not
-be modified.
+Providers and routing are in `src/app/`, HTTP infrastructure is in `src/api/`,
+and shared components are in
+`src/components/`. Resource domain rules live in
+`src/features/resources/domain/`; API contracts, pages, forms, hooks, and state
+remain grouped by responsibility in the same feature. Test suites live in local
+`__tests__/` directories. Shared fixtures and MSW setup are in `src/test/`.
+`src/design-system/` must not be modified.
 
-The Express and MongoDB backend is an independent package in `backend/`. This
-assignment permits frontend changes only; do not change backend contracts or
-backend source.
+The Express and MongoDB backend is in `backend/`. This
+assignment permits frontend changes only; do not change its contracts or source.
 
 ## Build, Test, and Development Commands
 
@@ -32,18 +32,19 @@ Run frontend commands from the repository root:
 ## Coding Style & Naming Conventions
 
 Use TypeScript, two-space indentation, single quotes, and no semicolons. Follow
-the repository Prettier and ESLint configuration. Components and component files
-use PascalCase (`ResourceFilters.tsx`); hooks use a `use` prefix
-(`useResourceListParams.ts`); other functions and variables use camelCase.
-Keep feature-specific code inside its feature and avoid barrel files that hide
-dependency direction.
+Prettier and ESLint. Components use PascalCase. Co-locate components with multiple
+implementation files in same-named directories (`ResourceFilters/`); pair UI
+files with `Component.styles.ts`. Keep style-free, single-file components flat.
+Prefix hooks with `use`; use camelCase elsewhere. Keep feature code inside its
+feature and avoid barrel files that hide dependency direction.
 
 ## Testing Guidelines
 
-Use Vitest, Testing Library, and MSW. Colocate `*.test.ts` and `*.test.tsx` with
-the behavior under test. Assert observable behavior and API requests rather than
-component internals. Global minimum coverage is 80% for statements, lines, and
-functions and 75% for branches. Run `npm run check` before submission.
+Use Vitest, Testing Library, and MSW. Place `*.test.ts` and `*.test.tsx` in the
+nearest `__tests__/` directory (for example, `pages/__tests__/`). Assert
+observable behavior and API requests rather than component internals. Global
+minimum coverage is 80% for statements, lines, and functions and 75% for
+branches. Run `npm run check` before submission.
 
 ## Commit & Pull Request Guidelines
 

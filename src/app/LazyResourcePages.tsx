@@ -1,33 +1,39 @@
 import { Suspense, lazy, type ReactNode } from 'react'
-import { LoadingState } from '../components/PageState'
+import { LoadingState } from '../components/PageState/PageState'
 
 const ResourcesPage = lazy(() =>
-  import('../features/resources/pages/ResourcesPage').then((module) => ({
+  import('../features/resources/pages/ResourcesPage/ResourcesPage').then((module) => ({
     default: module.ResourcesPage,
   })),
 )
 const ResourceOverviewPage = lazy(() =>
-  import('../features/resources/pages/ResourceOverviewPage').then((module) => ({
-    default: module.ResourceOverviewPage,
-  })),
+  import('../features/resources/pages/ResourceOverviewPage/ResourceOverviewPage').then(
+    (module) => ({
+      default: module.ResourceOverviewPage,
+    }),
+  ),
 )
 const ResourceDetailsPage = lazy(() =>
-  import('../features/resources/pages/ResourceDetailsPage').then((module) => ({
-    default: module.ResourceDetailsPage,
-  })),
+  import('../features/resources/pages/ResourceDetailsPage/ResourceDetailsPage').then(
+    (module) => ({
+      default: module.ResourceDetailsPage,
+    }),
+  ),
 )
 const BasicInfoPage = lazy(() =>
-  import('../features/resources/pages/BasicInfoPage').then((module) => ({
+  import('../features/resources/pages/BasicInfoPage/BasicInfoPage').then((module) => ({
     default: module.BasicInfoPage,
   })),
 )
 const ProjectDetailsPage = lazy(() =>
-  import('../features/resources/pages/ProjectDetailsPage').then((module) => ({
-    default: module.ProjectDetailsPage,
-  })),
+  import('../features/resources/pages/ProjectDetailsPage/ProjectDetailsPage').then(
+    (module) => ({
+      default: module.ProjectDetailsPage,
+    }),
+  ),
 )
 const NotFoundPage = lazy(() =>
-  import('../features/resources/pages/NotFoundPage').then((module) => ({
+  import('../features/resources/pages/NotFoundPage/NotFoundPage').then((module) => ({
     default: module.NotFoundPage,
   })),
 )

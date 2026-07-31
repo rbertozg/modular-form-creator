@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import { useBeforeUnload } from 'react-router-dom'
-import { ConfirmDialog } from '../../../components/ConfirmDialog'
+import { ConfirmDialog } from '../../../components/ConfirmDialog/ConfirmDialog'
 
 function BeforeUnloadWarning() {
   useBeforeUnload(

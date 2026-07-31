@@ -8,7 +8,7 @@ import {
   areResourcePayloadsEqual,
   toBasicInfoUpdatePayload,
   toResourcePayload,
-} from '../resource.mappers'
+} from '../domain/resource.mappers'
 
 export interface EditBufferEntry {
   basePayload: ResourcePayload

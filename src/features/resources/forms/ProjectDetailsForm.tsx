@@ -9,9 +9,9 @@ import {
   projectDetailsSchema,
   type ProjectDetailsFormInput,
   type ProjectDetailsFormValues,
-} from '../resource.schemas'
-import { FormActions, FormError } from './FormLayout'
-import { Form, FormGrid, InteractiveCheckboxField } from './FormLayout.styles'
+} from '../domain/resource.schemas'
+import { FormActions, FormError } from './FormLayout/FormLayout'
+import { Form, FormGrid, InteractiveCheckboxField } from './FormLayout/FormLayout.styles'
 
 interface ProjectDetailsFormProps {
   defaultValues: ProjectDetails

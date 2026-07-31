@@ -9,9 +9,9 @@ import {
   basicInfoSchema,
   type BasicInfoFormInput,
   type BasicInfoFormValues,
-} from '../resource.schemas'
-import { FormActions, FormError } from './FormLayout'
-import { Form, FormGrid, FullWidthField } from './FormLayout.styles'
+} from '../domain/resource.schemas'
+import { FormActions, FormError } from './FormLayout/FormLayout'
+import { Form, FormGrid, FullWidthField } from './FormLayout/FormLayout.styles'
 
 interface BasicInfoFormProps {
   defaultValues: BasicInfo

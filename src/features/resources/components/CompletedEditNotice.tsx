@@ -1,4 +1,4 @@
-import { AlertMessage } from '../../../components/AlertMessage'
+import { AlertMessage } from '../../../components/AlertMessage/AlertMessage'
 
 export function CompletedEditNotice() {
   return (

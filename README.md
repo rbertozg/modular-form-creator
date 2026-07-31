@@ -156,14 +156,26 @@ module payload is intentionally safe and idempotent.
 
 ```text
 src/
-├── api/                         # Generic HTTP client and error mapping
+├── api/                         # Generic HTTP client with local __tests__
 ├── app/                         # Providers and route configuration
-├── components/                  # Application-level shared components
+├── components/                  # Shared components with local __tests__
 ├── design-system/               # Provided immutable component library
-├── features/resources/          # Resource API, hooks, pages, forms, and tests
+├── features/resources/
+│   ├── api/                     # Resource contracts and server operations
+│   ├── domain/                  # Pure rules, schemas, mappers, and versioning
+│   ├── components/              # Resource UI, grouped by multi-file component
+│   ├── edit-buffer/             # In-memory completed-resource changes
+│   ├── forms/                   # Module forms
+│   ├── hooks/                   # Page orchestration
+│   └── pages/                   # Route views grouped with their styles
 ├── layouts/                     # Application shell
-└── test/                        # Test setup, fixtures, and render helpers
+└── test/                        # Shared test setup, fixtures, and helpers
 ```
 
 Backend documentation and the exact endpoint contract are available in
 `backend/README.md`.
+
+Multi-file UI elements use same-named directories containing
+`Component.tsx` and `Component.styles.ts`. Small components without dedicated
+styles remain single files. Test suites stay in the nearest shared `__tests__/`
+directory.

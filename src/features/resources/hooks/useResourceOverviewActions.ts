@@ -14,8 +14,8 @@ import {
 import {
   doesCompletedResourceMatchPayload,
   toCompletedResourceUpdatePayload,
-} from '../resource.mappers'
-import { hasResourceVersionChanged } from '../resource.version'
+} from '../domain/resource.mappers'
+import { hasResourceVersionChanged } from '../domain/resource.version'
 
 export type ResourceDialogAction = 'provision' | 'save' | 'discard' | null
 

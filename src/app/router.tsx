@@ -1,5 +1,5 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom'
-import { AppLayout } from '../layouts/AppLayout'
+import { AppLayout } from '../layouts/AppLayout/AppLayout'
 import {
   LazyBasicInfoPage,
   LazyNotFoundPage,
